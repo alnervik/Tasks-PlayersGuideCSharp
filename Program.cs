@@ -18,3 +18,18 @@ float eggsEachSister = totalAmountEggs / 4;
 int eggsForDuckBear = totalAmountEggs % 4;
 Console.WriteLine("The sisters get: " + eggsEachSister + " eggs each");
 Console.WriteLine("And the duckbear gets: " + eggsForDuckBear + " eggs"); */
+
+Console.WriteLine("How many provinces do you have?");
+string totalProvincesText = Console.ReadLine();
+int.TryParse(totalProvincesText, out int totalProvinces);
+
+Console.WriteLine("How many duchies do you have?");
+string totalDuchiesText = Console.ReadLine();
+int.TryParse(totalDuchiesText, out int totalDuchies);
+
+Console.WriteLine("How many estates do you have?");
+string totalEstatesText = Console.ReadLine();
+int.TryParse(totalEstatesText, out int totalEstates);
+
+int totalScore = (totalDuchies * 3) + (totalEstates * 1) + (totalProvinces * 6);
+Console.WriteLine("The point total is " + totalScore);
