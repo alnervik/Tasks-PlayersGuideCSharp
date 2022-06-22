@@ -68,3 +68,18 @@ Console.Beep(600, 200);
 Console.Beep(300, 200);
 Console.Beep(200, 200);
 Console.Beep(100, 200); */
+//kap 9 s75
+Console.WriteLine("Input the number:");
+string clockNumberText = Console.ReadLine();
+int.TryParse(clockNumberText, out int clockNumber);
+
+//om det är jämn nummer säger den tick. iom delar du 2 med jämn nummer blir det 0 kvar.
+if (clockNumber % 2 == 0)
+{
+    Console.WriteLine("Tick");
+}
+//blir det inte 0 kvar? då har vi ojämnt nummer och tock skrivs ut
+else
+{
+    Console.WriteLine("Tock");
+}
