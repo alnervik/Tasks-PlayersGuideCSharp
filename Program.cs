@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
-/* Console.WriteLine("Lets check the area of your triangle.");
+/*
+Console.WriteLine("Lets check the area of your triangle.");
 Console.WriteLine("Please input the base:");
 string triangleBaseText = Console.ReadLine();
 int triangleBase = Convert.ToInt32(triangleBaseText);
@@ -10,7 +11,8 @@ decimal triangleArea = (triangleBase * triangleHeight) / 2;
 Console.WriteLine("Hmm lets see.. the area is: " + triangleArea);
 */
 // kap 7 s56 uppgift:
-/* Console.WriteLine("How many eggs gathered today?");
+/*
+Console.WriteLine("How many eggs gathered today?");
 string totalAmountEggsText = Console.ReadLine();
 int.TryParse(totalAmountEggsText, out int totalAmountEggs);
 float eggsEachSister = totalAmountEggs / 4;
@@ -69,6 +71,7 @@ Console.Beep(300, 200);
 Console.Beep(200, 200);
 Console.Beep(100, 200); */
 //kap 9 s75
+/*
 Console.WriteLine("Input the number:");
 string clockNumberText = Console.ReadLine();
 int.TryParse(clockNumberText, out int clockNumber);
@@ -82,4 +85,5 @@ if (clockNumber % 2 == 0)
 else
 {
     Console.WriteLine("Tock");
-}
+} */
+// kap 
