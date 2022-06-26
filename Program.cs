@@ -86,4 +86,67 @@ else
 {
     Console.WriteLine("Tock");
 } */
-// kap 
+
+// kap 9 uppgift 2
+/*
+Console.WriteLine("Write a number for x-value");
+int xValue = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Write a number for y-value");
+int yValue = Convert.ToInt32(Console.ReadLine());
+if (xValue < 0 && yValue > 0) Console.WriteLine("The enemy is to the NW");
+if (xValue == 0 && yValue > 0) Console.WriteLine("The enemy is to the N!");
+if (xValue > 0 && yValue > 0) Console.WriteLine("The enemy is to the NE!");
+if (xValue < 0 && yValue == 0) Console.WriteLine("The enemy is to the W!");
+if (xValue == 0 && yValue == 0) Console.WriteLine("The enemy is hereeee!");
+if (xValue > 0 && yValue == 0) Console.WriteLine("The enemy is to the E!");
+if (xValue < 0 && yValue < 0) Console.WriteLine("The enemy is to the SW!");
+if (xValue == 0 && yValue < 0) Console.WriteLine("The enemy is to the S!");
+if (xValue > 0 && yValue < 0) Console.WriteLine("The enemy is to the SE!");
+*/
+// kap 10 uppgift 1+2:
+/*
+Console.WriteLine("Hello! What is your name?");
+string username = Console.ReadLine();
+Console.WriteLine("The following items are available:");
+Console.WriteLine("1 - Rope");
+Console.WriteLine("2 - Torches");
+Console.WriteLine("3 - Climbing Equipment");
+Console.WriteLine("4 - Clean Water");
+Console.WriteLine("5 - Machete");
+Console.WriteLine("6 - Canoe");
+Console.WriteLine("7 - Food supplies");
+
+Console.WriteLine("What do you want to know the price of?");
+int productChoice = Convert.ToInt32(Console.ReadLine());
+
+string product = productChoice switch
+{
+    1 => "Rope",
+    2 => "Torches",
+    3 => "Climbing equipment",
+    4 => "Clean water",
+    5 => "Machete",
+    6 => "Canoe",
+    7 => "Food supplies",
+    _ => "what item is that?. pick another option..",
+};
+
+int productPrice = product switch
+{
+    "Rope"  => 10,
+    "Torches" => 15,
+    "Climbing equipment" => 25,
+    "Clean water" => 1,
+    "Machete" => 20,
+    "Canoe" => 200,
+    "Food supplies" => 1,
+};
+if (username == "Kalle")
+{
+    Console.WriteLine($"{product} costs {productPrice / 2} gold.");
+}
+else
+    {
+        Console.WriteLine($"{product} costs {productPrice} gold.");
+    }
+*/
