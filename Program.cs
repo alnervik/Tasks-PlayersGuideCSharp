@@ -150,7 +150,7 @@ else
     }
 */
 //kap 11 uppgift 1
-
+/*
 int choosenNumber;
 do
 {
@@ -171,4 +171,29 @@ while(true)
     else if (guessedNumber < choosenNumber) Console.WriteLine($"{guessedNumber} is too low");
     else break;
 }
-Console.WriteLine("You guessed the right number!");
+Console.WriteLine("You guessed the right number!"); */
+// kap 11 uppgift 2
+
+for (int totalNumber = 1; totalNumber <= 100; totalNumber++)
+{
+    if (totalNumber % 5 == 0 && totalNumber % 3 == 0)
+    {
+        Console.ForegroundColor = ConsoleColor.Blue;
+        Console.WriteLine($"{totalNumber}: Electric and fire");
+    }
+    else if (totalNumber % 5 == 0)
+    {
+        Console.ForegroundColor = ConsoleColor.Yellow;
+        Console.WriteLine($"{totalNumber}: Electric");
+    }
+    else if (totalNumber % 3 == 0)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine($"{totalNumber}: Fire");
+    }
+    else
+    {
+        Console.ForegroundColor = ConsoleColor.White;
+        Console.WriteLine($"{totalNumber}: Normal");
+    }
+}
