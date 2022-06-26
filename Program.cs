@@ -173,7 +173,7 @@ while(true)
 }
 Console.WriteLine("You guessed the right number!"); */
 // kap 11 uppgift 2
-
+/*
 for (int totalNumber = 1; totalNumber <= 100; totalNumber++)
 {
     if (totalNumber % 5 == 0 && totalNumber % 3 == 0)
@@ -197,3 +197,25 @@ for (int totalNumber = 1; totalNumber <= 100; totalNumber++)
         Console.WriteLine($"{totalNumber}: Normal");
     }
 }
+*/
+// kap 12 uppgift 1
+/*
+//orimligt svår för mig.. kunde lösa första delen. fick leta hjälp på andra. hade nog inte gjort på detta sätt..
+int[] userNumbers = new int[5];
+Console.WriteLine("Please enter 5 numbers:");
+// Följande for ber användaren om lika många siffror som det är i array. i detta fallet är det 5
+for (int index = 0; index < userNumbers.Length; index++)
+{
+    int input = Convert.ToInt32(Console.ReadLine());
+    userNumbers[index] = input; //index blir total 5. userNumbers (array) sparar 5 olika nummer i sig utifrån input.
+}
+//påbörjan på delen som ska kopiera föregående array
+int[] copyNumbers = new int[5];
+//i första steget så kopierar vi usersNumbers till copyNumber. vi använder samma index för att få 5 st omgångar av kopia.
+for (int copyIndex = 0; copyIndex < copyNumbers.Length; copyIndex++) //när den kört genom 5 gånger har input gått från usersNumbers till copyNumbers
+    copyNumbers[copyIndex] = userNumbers[copyIndex];
+// Nu har båda arrays samma siffror. För att visa detta kör vi nedanstående for loop. Den går genom
+// 5 omgångar. Presenterar den sparade value i sig via WriteLine.
+for (int copyIndex = 0; copyIndex < copyNumbers.Length; copyIndex++)
+    Console.WriteLine($"{userNumbers[copyIndex]} and {copyNumbers[copyIndex]}");
+*/
