@@ -86,7 +86,6 @@ else
 {
     Console.WriteLine("Tock");
 } */
-
 // kap 9 uppgift 2
 /*
 Console.WriteLine("Write a number for x-value");
@@ -150,3 +149,26 @@ else
         Console.WriteLine($"{product} costs {productPrice} gold.");
     }
 */
+//kap 11 uppgift 1
+
+int choosenNumber;
+do
+{
+    Console.WriteLine("Malin write a number between 0 and 100: ");
+    choosenNumber = Convert.ToInt32(Console.ReadLine());
+}
+while (choosenNumber < 0 || choosenNumber > 100);
+Console.Clear();
+
+Console.WriteLine("Kalle guess the number. between 0 and 100");
+
+while(true)
+{
+    Console.WriteLine("What's your next guess? ");
+    int guessedNumber = Convert.ToInt32(Console.ReadLine());
+
+    if (guessedNumber > choosenNumber) Console.WriteLine($"{guessedNumber} is too high");
+    else if (guessedNumber < choosenNumber) Console.WriteLine($"{guessedNumber} is too low");
+    else break;
+}
+Console.WriteLine("You guessed the right number!");
