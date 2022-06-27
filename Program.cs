@@ -244,14 +244,19 @@ float average = (float)total / arrayAverage.Length;
 Console.WriteLine($"The arrays average number is: {average}");
 */
 //kap 13 uppgift 1
-
+//gör om typ allt.. snurrat till det
 Console.WriteLine("What's your favourite number?");
 AskForNumber();
 void AskForNumber(string text)
 {
 
 }
-
+int ReadNumber()
+{
+    string text = Console.ReadLine();
+    int number = Convert.ToInt32(text);
+    return number;
+}
 
 
 
@@ -265,10 +270,4 @@ void Count(int numberToCountTo)
 {
     for (int current = 1; current <= numberToCountTo; current++)
         Console.WriteLine(current);
-}
-int ReadNumber()
-{
-    string input = Console.ReadLine();
-    int number = Convert.ToInt32(input);
-    return number;
 }
