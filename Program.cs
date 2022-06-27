@@ -219,3 +219,27 @@ for (int copyIndex = 0; copyIndex < copyNumbers.Length; copyIndex++) //när den 
 for (int copyIndex = 0; copyIndex < copyNumbers.Length; copyIndex++)
     Console.WriteLine($"{userNumbers[copyIndex]} and {copyNumbers[copyIndex]}");
 */
+//kap 12 uppgift 2.1
+/*
+int[] arraySmall = new int[] { 4, 51, -7, 13, -99, 15, -8, 45, 90 };
+int currentSmallest = int.MaxValue; // Start higher than anything in the array.
+
+foreach (int index in arraySmall)
+{
+    if (index < currentSmallest)
+        currentSmallest = index;
+}
+Console.WriteLine($"The smallest number in array is: {currentSmallest}");
+*/
+//kap 12 uppgift 2.2:
+/*
+int[] arrayAverage = new int[] { 4, 51, -7, 13, -99, 15, -8, 45, 90 };
+int total = 0;
+
+foreach (int index in arrayAverage)
+{
+    total += index;
+}
+float average = (float)total / arrayAverage.Length;
+Console.WriteLine($"The arrays average number is: {average}");
+*/
