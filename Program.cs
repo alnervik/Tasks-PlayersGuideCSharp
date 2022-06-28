@@ -244,30 +244,36 @@ float average = (float)total / arrayAverage.Length;
 Console.WriteLine($"The arrays average number is: {average}");
 */
 //kap 13 uppgift 1
-//gör om typ allt.. snurrat till det
-Console.WriteLine("What's your favourite number?");
-AskForNumber();
-void AskForNumber(string text)
+//tog till en del hjälp. skrev om uppgift från kap 11
+/*
+int chosenNumber = AskForNumberInRange("Malin, enter a number between 0 and 100", 0, 100);
+Console.Clear();
+Console.WriteLine("Kalle, guess a number between 0 and 100" );
+while (true)
 {
-
+    int guessedNumber = AskForNumber("What's your next guess? ");
+    if (guessedNumber > chosenNumber) Console.WriteLine($"{guessedNumber} is too high");
+    else if (guessedNumber < chosenNumber) Console.WriteLine($"{guessedNumber} is too low");
+    else break;
 }
-int ReadNumber()
+Console.WriteLine("You guessed the right number!");
+
+
+
+int AskForNumber (string text)
 {
-    string text = Console.ReadLine();
-    int number = Convert.ToInt32(text);
-    return number;
+    Console.WriteLine(text);
+    int chosenNumber = Convert.ToInt32(Console.ReadLine());
+    return chosenNumber;
 }
 
-
-
-
-
-// enbart för att kika pååååå
-Console.Write("How high should I count?");
-int chosenNumber = ReadNumber();
-Count(chosenNumber);
-void Count(int numberToCountTo)
+int AskForNumberInRange (string text, int min, int max)
 {
-    for (int current = 1; current <= numberToCountTo; current++)
-        Console.WriteLine(current);
+    while (true)
+    {
+        int chosenNumber = AskForNumber(text);
+        if (chosenNumber >= min && chosenNumber <= max)
+            return chosenNumber;
+    }
 }
+*/
