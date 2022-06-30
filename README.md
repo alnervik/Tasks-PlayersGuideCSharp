@@ -1,2 +1,2 @@
-# Hej-varlden
-Innehåller övningar från C# Player's Guide
+# Tasks from Player's Guide
+Contains several tasks from the Player's Guide to C#
