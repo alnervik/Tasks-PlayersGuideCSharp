@@ -303,6 +303,11 @@ while (true)
     {
         LockOrOpenChest();
     }
+    else if ( state == Chest.Open)
+    {
+        CloseChest();
+    }
+
 }
 
 
@@ -315,20 +320,20 @@ void UnlockingChest()
         state = Chest.Unlocked;
         }
 }
+
 void LockOrOpenChest()
 {
     Console.WriteLine( "The chest is unlocked. What do you want to do?" );
     string lockedOrOpen = Console.ReadLine();
         if ( lockedOrOpen == "lock" || lockedOrOpen == "Lock" )
         {
-        state = Chest.Locked;
+            state = Chest.Locked;
         }
         else if ( lockedOrOpen == "open" || lockedOrOpen == "Open" )
         {
-        state = Chest.Open;
+            state = Chest.Open;
         }
 }
-
 
 void CloseChest()
 {
@@ -336,7 +341,7 @@ void CloseChest()
     string close = Console.ReadLine();
         if ( close == "close" || close == "Close" )
     {
-
+        state = Chest.Unlocked;
     }
 }
 
