@@ -290,7 +290,7 @@ void Countdown(int number)
 }
 */
 //kap 16, uppgift 1
-
+/*
 Chest state = Chest.Locked;
 
 while (true)
@@ -310,6 +310,9 @@ while (true)
 
 }
 
+//=====================
+//=== M E T H O D S ===
+//=====================
 
 void UnlockingChest()
 {
@@ -356,4 +359,72 @@ enum Chest
     Locked,
     Unlocked,
     Open
+}
+*/
+// Level 17 challenge
+
+PresentingMenu();
+
+PickFoodType();
+PickSeasoning();
+PickMainIngredient();
+
+PresentDish();
+
+
+//=====================
+//=== M E T H O D S ===
+//=====================
+void PresentingMenu()
+{
+    Console.WriteLine(
+}
+void PickFoodType()
+{
+    Console.WriteLine( "Please pick what kind of food you'd like." );
+    string unlock = Console.ReadLine();
+    if (unlock == "unlock" || unlock == "Unlock")
+    {
+        state = Chest.Unlocked;
+    }
+}
+void PickSeasoning()
+{
+    throw new NotImplementedException();
+}
+
+void PickMainIngredient()
+{
+    throw new NotImplementedException();
+}
+
+void PresentDish()
+{
+    throw new NotImplementedException();
+}
+
+//=====================
+//E N U M E R A T I O N
+//=====================
+
+enum Seasoning
+{
+    Spicy,
+    Salty,
+    Sweet
+}
+
+enum FoodType
+{
+    Soup,
+    Stew,
+    Gumbo
+}
+
+enum MainIngredient
+{
+    Mushroom,
+    Chicken,
+    Carrots,
+    Potatoes
 }
