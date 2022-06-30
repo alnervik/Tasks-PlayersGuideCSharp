@@ -174,7 +174,7 @@ while(true)
 Console.WriteLine("You guessed the right number!"); */
 // kap 11 uppgift 2
 /*
-for (int totalNumber = 1; totalNumber <= 100; totalNumber++)
+for (int totalNumber = 1; totalNumber <= 20; totalNumber++)
 {
     if (totalNumber % 5 == 0 && totalNumber % 3 == 0)
     {
@@ -277,3 +277,78 @@ int AskForNumberInRange (string text, int min, int max)
     }
 }
 */
+// kap 13 uppgift 2
+//tog till hjälp
+/*
+Countdown(10);
+
+void Countdown(int number)
+{
+    if (number == 0) return;
+    Console.WriteLine(number);
+    Countdown(number - 1);
+}
+*/
+//kap 16, uppgift 1
+
+Chest state = Chest.Locked;
+
+while (true)
+{
+    if (state == Chest.Locked)
+    {
+        UnlockingChest();
+    }
+    else if (state == Chest.Unlocked)
+    {
+        LockOrOpenChest();
+    }
+}
+
+
+void UnlockingChest()
+{
+    Console.WriteLine( "The chest is locked. What do you want to do?" );
+    string unlock = Console.ReadLine();
+        if ( unlock == "unlock" || unlock == "Unlock" )
+        {
+        state = Chest.Unlocked;
+        }
+}
+void LockOrOpenChest()
+{
+    Console.WriteLine( "The chest is unlocked. What do you want to do?" );
+    string lockedOrOpen = Console.ReadLine();
+        if ( lockedOrOpen == "lock" || lockedOrOpen == "Lock" )
+        {
+        state = Chest.Locked;
+        }
+        else if ( lockedOrOpen == "open" || lockedOrOpen == "Open" )
+        {
+        state = Chest.Open;
+        }
+}
+
+
+void CloseChest()
+{
+    Console.WriteLine( "The chest is open. What do you want to do?" );
+    string close = Console.ReadLine();
+        if ( close == "close" || close == "Close" )
+    {
+
+    }
+}
+
+
+
+//=====================
+//E N U M E R A T I O N
+//=====================
+
+enum Chest
+{
+    Locked,
+    Unlocked,
+    Open
+}
