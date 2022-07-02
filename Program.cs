@@ -365,9 +365,7 @@ enum Chest
 
 PresentingMenu();
 
-PickFoodType();
-PickSeasoning();
-PickMainIngredient();
+(FoodType foodType, MainIngredient ingredient, Seasoning seasoning) food = GetFood();
 
 PresentDish();
 
@@ -377,30 +375,59 @@ PresentDish();
 //=====================
 void PresentingMenu()
 {
-    Console.WriteLine(
-}
-void PickFoodType()
-{
-    Console.WriteLine( "Please pick what kind of food you'd like." );
-    string unlock = Console.ReadLine();
-    if (unlock == "unlock" || unlock == "Unlock")
-    {
-        state = Chest.Unlocked;
-    }
-}
-void PickSeasoning()
-{
-    throw new NotImplementedException();
+    Console.WriteLine($"Hello! You'll be able to pick between different seasoning, food type and main ingredient. ");
+    Console.ReadLine();
 }
 
-void PickMainIngredient()
+(FoodType, MainIngredient, Seasoning) GetFood()
 {
-    throw new NotImplementedException();
+    FoodType foodType = PickFoodType();
+    MainIngredient ingredient = PickMainIngredient();
+    Seasoning seasoning = PickSeasoning();
+    return (foodType, ingredient, seasoning);
+}
+
+
+FoodType PickFoodType()
+{
+    Console.WriteLine( "First you'll have to pick a food type. Would you like a soup, stew or gumbo?" );
+    var foodType = Console.ReadLine();
+    return foodType switch
+    {
+        "soup" => FoodType.Soup,
+        "stew" => FoodType.Stew,
+        "gumbo" => FoodType.Gumbo
+    };
+}
+Seasoning PickSeasoning()
+{
+    Console.WriteLine( "Great choice. Now you have to pick what kind of seasoning you'd like. You can pick between spicy, salty or sweet." );
+    var seasoning = Console.ReadLine();
+    return seasoning switch
+    {
+        "spicy" => Seasoning.Spicy,
+        "salty" => Seasoning.Salty,
+        "sweet" => Seasoning.Sweet
+    };
+}
+
+MainIngredient PickMainIngredient()
+{
+    Console.WriteLine("Sounds tasty! Now we have to see what kind of ingredient you want in your food. You can pick between mushroom, chicken, carrots or potatoes.");
+    var ingredient = Console.ReadLine();
+    return ingredient switch
+    {
+        "mushroom" => MainIngredient.Mushroom,
+        "chicken" => MainIngredient.Chicken,
+        "carrots" => MainIngredient.Carrots,
+        "potatoes" => MainIngredient.Potatoes
+    };
 }
 
 void PresentDish()
 {
-    throw new NotImplementedException();
+    Console.WriteLine($"Sounds delicious! Here you have your {food.seasoning} {food.ingredient} {food.foodType}.");
+    Console.ReadLine();
 }
 
 //=====================
@@ -418,7 +445,7 @@ enum FoodType
 {
     Soup,
     Stew,
-    Gumbo
+    Gumbo,
 }
 
 enum MainIngredient
