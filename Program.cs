@@ -362,7 +362,7 @@ enum Chest
 }
 */
 // Level 17 challenge
-
+/*
 PresentingMenu();
 
 (FoodType foodType, MainIngredient ingredient, Seasoning seasoning) food = GetFood();
@@ -454,4 +454,126 @@ enum MainIngredient
     Chicken,
     Carrots,
     Potatoes
+}
+*/
+// Level 18 challenge
+
+Arrow arrow = GetArrow();
+Console.Clear();
+Console.WriteLine($"That arrow is costing {arrow.GetArrowCost()} gold.");
+Console.ReadKey();
+
+
+//=====================
+//=== M E T H O D S ===
+//=====================
+
+Arrow GetArrow()
+{
+    Arrowhead material = PickArrowhead();
+    Fletching fletch = PickFletching();
+    float length = ArrowLength();
+    return new Arrow (material, fletch, length);
+}
+
+Arrowhead PickArrowhead()
+{
+    Console.WriteLine("You have to pick what kind of arrowhead you want. You can pick steel, wood or obsidian.");
+    var material = Console.ReadLine();
+    return material switch
+    {
+        "steel" => Arrowhead.Steel,
+        "Steel" => Arrowhead.Steel,
+        "wood" => Arrowhead.Wood,
+        "Wood" => Arrowhead.Wood,
+        "obsidian" => Arrowhead.Obsidian,
+        "Obsidian" => Arrowhead.Obsidian
+    };
+}
+
+Fletching PickFletching()
+{
+    Console.WriteLine("You have to pick what kind of fletching your arrow should have. You can pick plastic, turkey feather, or goose feather.");
+    var fletch = Console.ReadLine();
+    return fletch switch
+    {
+        "plastic" => Fletching.Plastic,
+        "Plastic" => Fletching.Plastic,
+        "turkey feather" => Fletching.Turkey,
+        "Turkey feather" => Fletching.Turkey,
+        "goose feather" => Fletching.Goose,
+        "Goose feather" => Fletching.Goose
+    };
+}
+
+float ArrowLength()
+{
+    float length = 0;
+    while (length < 60 || length > 100)
+    {
+        Console.WriteLine("I'd like to know how long you want your arrow. You can pick a number between 60 and 100.");
+        length = Convert.ToSingle(Console.ReadLine());
+    }
+    return length;
+}
+
+void GetArrowCost()
+{
+
+}
+
+
+class Arrow
+{
+    public Arrowhead _arrowhead;
+    public Fletching _fletching;
+    public float _length;
+
+    public Arrow(Arrowhead arrowhead, Fletching fletching, float length)
+    {
+        _arrowhead = arrowhead;
+        _fletching = fletching;
+        _length = length;
+    }
+
+    public float GetArrowCost()
+    {
+        float arrowheadCost = _arrowhead switch
+        {
+            Arrowhead.Wood => 3,
+            Arrowhead.Obsidian => 5,
+            Arrowhead.Steel => 10
+        };
+
+        float fletchingCost = _fletching switch
+        {
+            Fletching.Goose => 3,
+            Fletching.Turkey => 5,
+            Fletching.Plastic => 10
+        };
+
+        float shaftCost = 0.05f * _length;
+
+        return arrowheadCost + fletchingCost + shaftCost;
+    }
+}
+
+
+
+//=====================
+//E N U M E R A T I O N
+//=====================
+
+enum Arrowhead
+{
+    Steel,
+    Wood,
+    Obsidian
+}
+
+enum Fletching
+{
+    Plastic,
+    Turkey,
+    Goose
 }
