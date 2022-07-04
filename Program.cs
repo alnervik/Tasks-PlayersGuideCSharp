@@ -456,7 +456,7 @@ enum MainIngredient
     Potatoes
 }
 */
-// Level 18 challenge
+// Level 18 challenge & level 19
 
 Arrow arrow = GetArrow();
 Console.Clear();
@@ -476,7 +476,7 @@ Arrow GetArrow()
     return new Arrow (material, fletch, length);
 }
 
-Arrowhead PickArrowhead()
+Arrowhead PickArrowhead( )
 {
     Console.WriteLine("You have to pick what kind of arrowhead you want. You can pick steel, wood or obsidian.");
     var material = Console.ReadLine();
@@ -517,17 +517,14 @@ float ArrowLength()
     return length;
 }
 
-void GetArrowCost()
+
+
+
+public class Arrow
 {
-
-}
-
-
-class Arrow
-{
-    public Arrowhead _arrowhead;
-    public Fletching _fletching;
-    public float _length;
+    private Arrowhead _arrowhead;
+    private Fletching _fletching;
+    private float _length;
 
     public Arrow(Arrowhead arrowhead, Fletching fletching, float length)
     {
@@ -564,16 +561,17 @@ class Arrow
 //E N U M E R A T I O N
 //=====================
 
-enum Arrowhead
+public enum Arrowhead
 {
     Steel,
     Wood,
     Obsidian
 }
 
-enum Fletching
+public enum Fletching
 {
     Plastic,
     Turkey,
     Goose
 }
+*/
